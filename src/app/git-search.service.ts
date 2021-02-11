@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import 'rxjs/add/operator/map';
+import {User} from './user';
+import {Repos} from './repos';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +17,17 @@ export class GitSearchService {
     console.log("service is now ready!")
     this.username="carol-kangara"
    }
-   getProfileInfo(){
-     return this.http.get("https://api.github.com/users" + this.username + "?client_id=" + this.clientid + "&client_secret=" +this.cliensecret )
-     .map(result =>result);
-   }
-   getRepos() {
+   getUser() {
+    return this.http.get('https://api.github.com/users/' + this.username)
+    .map(result => result);
+
+  }
+  getRepos() {
     return this.http.get(' https://api.github.com/users/' + this.username + '/repos')
     .map(result => result);
-}
+  }
   updateUser(username: string) {
   this.username = username;
-} 
+  }
 }
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GithubService} from '../github.service';
+import {GitSearchService} from '../git-search.service';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,12 +11,12 @@ export class ProfileComponent implements OnInit {
   user: any= [];
   repos: any= [];
   username!: string;
-  constructor(private _githubService: GithubService) {
-    this._githubService.getUser().subscribe(user => {
+  constructor(private _gitsearchService: GitSearchService) {
+    this._gitsearchService.getUser().subscribe(user => {
       console.log(user);
       this.user = user;
     });
-    this._githubService.getRepos().subscribe(repos => {
+    this._gitsearchService.getRepos().subscribe(repos => {
       this.repos = repos;
     });
    }
@@ -24,11 +24,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   searchUser() {
-    this._githubService.updateUser(this.username);
-    this._githubService.getUser().subscribe(user => {
+    this._gitsearchService.updateUser(this.username);
+    this._gitsearchService.getUser().subscribe(user => {
       this.user = user;
     });
-    this._githubService.getRepos().subscribe(repos => {
+    this._gitsearchService.getRepos().subscribe(repos => {
       this.repos = repos;
     });
 
