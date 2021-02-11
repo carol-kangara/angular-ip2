@@ -1,6 +1,26 @@
+# Angular-ip2
+####  
+#### By CAROLINE KANG'ARA
+
 # GithubSearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+
+# Description
+
+This is an app that you can search for github users and their github repository or look for repositories
+
+## Known Bugs
+There are no bags
+
+## Technologies Used
+* TypeScript
+* Angular
+* JavaScript
+* css
+* Html
+* Bootstrap
+
 
 ## Development server
 
