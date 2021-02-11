@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule } from '@angular/common/http'
+import {FormsModule} from '@angular/forms'
 
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
@@ -21,7 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     HttpClientModule,
     NgProgressModule.forRoot(),
-    NgProgressHttpClientModule
+    NgProgressHttpClientModule,
+    FormsModule
   ],
   providers: [GitSearchService],
   bootstrap: [AppComponent]
